@@ -1,0 +1,24 @@
+
+<div>Codigo Fonte Dart</div>
+<div id="popUpElement" >
+  <textarea id="codeEditor" style="height:1500px; width:800px; background:#000000; color:white">
+
+  </textarea>
+</div>
+<div>Assets</div>
+<textarea id="assetsFile" style="height:300px; width:800px; background:#000000; color:white">
+
+</textarea>
+
+
+
+<script>
+
+
+  onmessage = (event) => {
+    document.getElementById('codeEditor').innerHTML = event.data.pluginMessage.widget;
+    document.getElementById('assetsFile').innerHTML = event.data.pluginMessage.assets;
+
+  }
+    
+</script>
