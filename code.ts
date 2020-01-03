@@ -132,7 +132,7 @@ function containerHandler(
     imageObject = `
       image: DecorationImage(
             image: AssetImage("assets/images/${widgetName}.png"),
-            fit: BoxFit.fill),
+            fit: Boxfit.contain),
     `;
     imageAsset = `
       - assets/images/${widgetName}.png
@@ -260,7 +260,7 @@ function textHandler(
   let fontColorOpacity = textObject["fills"]["0"]["opacity"].toFixed(2);
   let textContainerHeightCoef = textObject["height"] / maxHeight;
   let textContainerWidthCoef = textObject["width"] / maxWidth;
-  let textAlign;
+  let textAlign = 'TextAlign.justify';
   switch (textObject["textAlignHorizontal"]) {
     case "CENTER":
       textAlign = "TextAlign.center";
@@ -329,7 +329,7 @@ function ellipseHandler(
     imageObject = `
       image: DecorationImage(
             image: AssetImage("assets/images/${widgetName}.png"),
-            fit: BoxFit.fill),
+            fit: Boxfit.contain),
     `;
     imageAsset = `
       - assets/images/${widgetName}.png
@@ -465,22 +465,6 @@ class _FlugmaWidgetState extends State<FlugmaWidget> {
 `;
 
 let assetsToAdd = `
-    name: bene
-    description: A new Flutter project.
-    version: 1.0.0+1
-
-    environment:
-      sdk: ">=2.1.0 <3.0.0"
-
-    dependencies:
-      flutter:
-        sdk: flutter
-
-      cupertino_icons: ^0.1.2
-    
-    dev_dependencies:
-      flutter_test:
-        sdk: flutter
 
     flutter:
       uses-material-design: true
