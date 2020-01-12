@@ -132,7 +132,7 @@ function containerHandler(
     imageObject = `
       image: DecorationImage(
             image: AssetImage("assets/images/${widgetName}.png"),
-            fit: Boxfit.contain),
+            fit: BoxFit.contain),
     `;
     imageAsset = `
       - assets/images/${widgetName}.png
@@ -260,7 +260,7 @@ function textHandler(
   let fontColorOpacity = textObject["fills"]["0"]["opacity"].toFixed(2);
   let textContainerHeightCoef = textObject["height"] / maxHeight;
   let textContainerWidthCoef = textObject["width"] / maxWidth;
-  let textAlign = 'TextAlign.justify';
+  let textAlign = "TextAlign.justify";
   switch (textObject["textAlignHorizontal"]) {
     case "CENTER":
       textAlign = "TextAlign.center";
@@ -329,7 +329,7 @@ function ellipseHandler(
     imageObject = `
       image: DecorationImage(
             image: AssetImage("assets/images/${widgetName}.png"),
-            fit: Boxfit.contain),
+            fit: BoxFit.contain),
     `;
     imageAsset = `
       - assets/images/${widgetName}.png
@@ -472,5 +472,5 @@ let assetsToAdd = `
         ${assets}
     
 `;
-console.log(figma.currentPage.selection["0"]);
+console.log(figma.currentPage.selection[0]);
 figma.ui.postMessage({ widget: statefullWidgetPage, assets: assetsToAdd });
